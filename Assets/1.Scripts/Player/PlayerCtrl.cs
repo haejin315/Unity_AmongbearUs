@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class PlayerCtrl : MonoBehaviour
 {
     public GameObject joyStick, mainView, missionView;
     public Settings settings_script;
+    public Button btn;
 
     Animator anim;
+    GameObject coll;
 
     public bool isCantMove;
 
@@ -87,7 +90,36 @@ public class PlayerCtrl : MonoBehaviour
     {
         if (collision.tag == "Mission")
         {
-            print("미션 감지");
+            coll = collision.gameObject;
+
+            btn.interactable = true;
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Mission")
+        {
+            coll = null;
+
+            btn.interactable = false;
+        }
+    }
+
+    //버튼 누르면 호출
+    public void ClickButton()
+    {
+        // MissionStart를 호출
+        coll.SendMessage("MissionStart");
+
+        isCantMove = true;
+        btn.interactable = false;
+    }
+
+    //미션 종료하면 호출
+    public void MissionEnd()
+    {
+        isCantMove = false;
+
     }
 }
