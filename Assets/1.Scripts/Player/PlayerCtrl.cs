@@ -120,6 +120,6 @@ public class PlayerCtrl : MonoBehaviour
     public void MissionEnd()
     {
         isCantMove = false;
-
+        btn.interactable = true;
     }
 }
