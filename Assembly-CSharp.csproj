@@ -60,8 +60,10 @@
     <Compile Include="Assets\1.Scripts\Player\Settings.cs" />
     <Compile Include="Assets\1.Scripts\MainMenu.cs" />
     <Compile Include="Assets\1.Scripts\Player\JoyStick.cs" />
-    <Compile Include="Assets\1.Scripts\Mission1.cs" />
-    <Compile Include="Assets\1.Scripts\Mission2.cs" />
+    <Compile Include="Assets\1.Scripts\Mission\Mission1.cs" />
+    <Compile Include="Assets\1.Scripts\Mission\Mission2.cs" />
+    <Compile Include="Assets\1.Scripts\Mission\Mission3.cs" />
+    <Compile Include="Assets\1.Scripts\Mission\Mission4.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
