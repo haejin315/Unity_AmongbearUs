@@ -10,6 +10,7 @@ public class Mission3 : MonoBehaviour
 
     Animator anim;
     PlayerCtrl playerCtrl_script;
+    MissionCtrl missionCtrl_script;
 
     void Start()
     {
@@ -22,6 +23,7 @@ public class Mission3 : MonoBehaviour
     {
         anim.SetBool("isUp", true);
         playerCtrl_script = FindObjectOfType<PlayerCtrl>();
+        missionCtrl_script = FindObjectOfType<MissionCtrl>();
 
         //텍스트 초기화
         InputText.text = "";
@@ -73,5 +75,6 @@ public class Mission3 : MonoBehaviour
     public void MissionSuccess()
     {
         ClickCancle();
+        missionCtrl_script.MissionSuccess(GetComponent<CircleCollider2D>());
     }
 }

@@ -28,5 +28,7 @@ Application.Quit();
         GameObject player = Instantiate(Resources.Load("Character"), new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
         player.GetComponent<PlayerCtrl>().mainView = gameObject;
         player.GetComponent<PlayerCtrl>().missionView = missionView;
+
+        missionView.SendMessage("MissionReset");
     }
 }
